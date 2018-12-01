@@ -60,7 +60,7 @@ public class KiSi_PlayerController : MonoBehaviour
     }
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Ground" && isOnGround)
+        if (collision.collider.tag == "KiSi_ground" && isOnGround)
         {
 
 
