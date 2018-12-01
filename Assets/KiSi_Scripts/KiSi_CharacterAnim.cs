@@ -19,5 +19,9 @@ public class KiSi_CharacterAnim : MonoBehaviour {
         {
             anim.SetBool("isRunning", false);
         }
+        if(Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            anim.SetTrigger("isJumping");
+        }
 	}
 }

@@ -40,7 +40,7 @@ public class KiSi_PlayerController : MonoBehaviour
 
         isOnGround = Physics2D.OverlapCircle(groundcheck.position, checkRadius, allGround);
 
-        Debug.Log(isOnGround);
+        //Debug.Log(isOnGround);
 
         if (facingRight == false && moveHorizontal > 0)
         {
@@ -71,6 +71,13 @@ public class KiSi_PlayerController : MonoBehaviour
 
             }
 
+        }
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+      if (other.gameObject.CompareTag("KiSi_Ball"))
+        {
+            other.gameObject.SetActive(false);
         }
     }
 

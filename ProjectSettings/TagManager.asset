@@ -8,6 +8,7 @@ TagManager:
   - KiSi_Player
   - KiSi_ground
   - Ground
+  - KiSi_Ball
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - KiSi_BackgroundLayer
   - KiSi_Ground
-  - 
+  - KiSi_Ball
   - 
   - 
   - 
@@ -47,6 +48,9 @@ TagManager:
     locked: 0
   - name: KiSi_BackgroundSortingLayer
     uniqueID: 150519493
+    locked: 0
+  - name: KiSi_BallSortingLayer
+    uniqueID: 2480726517
     locked: 0
   - name: KiSi_PlayerSortingLayer
     uniqueID: 3302884577
