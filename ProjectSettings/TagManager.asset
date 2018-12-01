@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - KiSi_BackgroundLayer
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: KiSi_BackgroundSortingLayer
+    uniqueID: 150519493
+    locked: 0
+  - name: KiSi_PlayerSortingLayer
+    uniqueID: 3302884577
+    locked: 0
+  - name: KiSi_GroundSortingLayer
+    uniqueID: 1005547375
     locked: 0
