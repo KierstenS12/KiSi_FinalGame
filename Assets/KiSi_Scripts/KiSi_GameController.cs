@@ -10,10 +10,7 @@ public class KiSi_GameController : MonoBehaviour
     public float spawnWait;
     public float startWait;
 
-
     void Start()
-    {
-        void Start()
         {
             StartCoroutine(SpawnWaves());
         }
@@ -33,5 +30,5 @@ public class KiSi_GameController : MonoBehaviour
                 }
             }
         }
-    }
 }
+

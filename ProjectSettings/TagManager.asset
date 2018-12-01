@@ -52,6 +52,9 @@ TagManager:
   - name: KiSi_BallSortingLayer
     uniqueID: 2480726517
     locked: 0
+  - name: KiSi_ParticleSortingLayer
+    uniqueID: 606287931
+    locked: 0
   - name: KiSi_PlayerSortingLayer
     uniqueID: 3302884577
     locked: 0

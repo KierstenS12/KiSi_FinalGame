@@ -1,43 +1,52 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KiSi_PlayerController : MonoBehaviour
 {
+    
     private Rigidbody2D rb2d;
     private bool facingRight = true;
 
     public float speed;
     public float jumpforce;
+    public Text announceText;
+
+    //audio stuff
+    private AudioSource source;
+    public AudioClip jumpClip;
+    private float volLowRange = .5f;
+    private float volHighRange = 1.0f;
 
     //ground check
     private bool isOnGround;
     public Transform groundcheck;
     public float checkRadius;
     public LayerMask allGround;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-
+        announceText.text = "Catch As Many Tennis Balls As You Can!";
     }
+    
+    void Awake()
+    {
+    source = GetComponent<AudioSource>();
+    }
+   
 
-    // Update is called once per frame
     void Update()
     {
-
+      
 
     }
 
     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
-
-        //Vector2 movement = new Vector2(moveHorizontal, 0);
-
-        // rb2d.AddForce(movement * speed);
-
         rb2d.velocity = new Vector2(moveHorizontal * speed, rb2d.velocity.y);
-
         isOnGround = Physics2D.OverlapCircle(groundcheck.position, checkRadius, allGround);
 
         //Debug.Log(isOnGround);
@@ -50,7 +59,11 @@ public class KiSi_PlayerController : MonoBehaviour
         {
             Flip();
         }
+       
     }
+
+   
+
     void Flip()
     {
         facingRight = !facingRight;
@@ -66,10 +79,11 @@ public class KiSi_PlayerController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                // rb2d.AddForce(new Vector2(0, jumpforce), ForceMode2D.Impulse);
                 rb2d.velocity = Vector2.up * jumpforce;
-
+                float vol = Random.Range(volLowRange, volHighRange);
+                source.PlayOneShot(jumpClip);
             }
+       
 
         }
     }
@@ -80,5 +94,6 @@ public class KiSi_PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
         }
     }
+   
 
 }
