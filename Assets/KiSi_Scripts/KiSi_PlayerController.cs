@@ -106,7 +106,7 @@ public class KiSi_PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             count = count + 2;
             SetCountText();
-           // GameLoader.AddScore(1);
+          // GameLoader.AddScore(10);
         }
     }
     void SetCountText()
@@ -126,6 +126,6 @@ public class KiSi_PlayerController : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         // Code to execute after the delay
-       // GameLoader.gameOn = false;
+       //GameLoader.gameOn = false;
     }
 }
